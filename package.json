@@ -2,14 +2,14 @@
   "name": "@nmyvision/html2pug",
   "version": "2.1.4",
   "description": "A zero dependency library for converting html to Pug format. With enhanced features like tag skipping and collapsed output",
-  "main": "dist/parser.js",
+  "main": "dist/nonbrowser.js",
+  "browser": "dist/parser.js",
   "types": "dist/parser.d.ts",
   "author": "Matt Gambill",
   "homepage": "https://github.com/NMyVision/html2pug#readme",
   "license": "ISC",
   "files": [
-    "dist/parser.d.ts",
-    "dist/parser.js"
+    "dist"
   ],
   "keywords": [
     "pug",
@@ -30,11 +30,17 @@
   "engines": {
     "node": ">= 8"
   },
-  "dependencies": {},
+  "dependencies": {
+    "detect-node": "2.0.4",
+    "jsdom": "16.3.0",
+    "jsdom-global": "3.0.2"
+  },
   "devDependencies": {
     "@babel/parser": "^7.8.7",
     "@babel/types": "^7.8.7",
     "@types/jest": "^25.1.4",
+    "@types/jsdom": "16.2.3",
+    "@types/node": "14.0.27",
     "babel-jest": "^25.1.0",
     "jest": "^25.1.0",
     "lint-staged": "^7.3.0",

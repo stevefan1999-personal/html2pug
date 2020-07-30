@@ -196,10 +196,12 @@ export class Parser {
           }
         }
         else {
-          if (text.includes('\n'))
+          if (text.includes('\n')) {
             pugNode.push(` ${text.trim()}`)
-          else
+          }
+          else {
             pugNode.push(` ${text}`)
+          }
         }
       }
     }
@@ -210,10 +212,12 @@ export class Parser {
 
   private canShorten(node: NodeLike): boolean {
     const ac = this.activeChildNodes(node)
-    if (ac.length === 1)
+    if (ac.length === 1) {
       return this.canShorten(ac[0])
-    else if (ac.length === 0)
+    }
+    else if (ac.length === 0) {
       return true
+ }
     return false
   }
 
